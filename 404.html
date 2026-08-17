@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>404 - Page Not Found | Renish Holidays</title>
+  <link rel="icon" type="image/jpeg" href="/favicon.jpg">
+  <style>
+    :root {
+      --brand-deep: #051024;
+      --brand-accent: #facc15;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body, html {
+      width: 100%;
+      height: 100%;
+      min-height: 100svh;
+      background-color: #000;
+      font-family: system-ui, -apple-system, sans-serif;
+      overflow: hidden;
+      color: #fff;
+    }
+    .error-page {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+    .video-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 0;
+      opacity: 0.6;
+    }
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to bottom, rgba(5,16,36,0.3), rgba(5,16,36,0.8));
+      z-index: 1;
+    }
+    .content {
+      position: relative;
+      z-index: 2;
+      padding: 2rem;
+    }
+    .error-code {
+      font-size: clamp(6rem, 20vw, 15rem);
+      font-weight: 900;
+      line-height: 1;
+      margin-bottom: 1rem;
+      background: linear-gradient(to right, #fff, rgba(255,255,255,0.7));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      letter-spacing: -0.05em;
+    }
+    .error-msg {
+      font-size: clamp(1.2rem, 4vw, 2rem);
+      font-weight: 500;
+      margin-bottom: 2rem;
+      color: rgba(255,255,255,0.9);
+    }
+    .btn-home {
+      display: inline-block;
+      padding: 1rem 2rem;
+      background-color: var(--brand-accent);
+      color: var(--brand-deep);
+      text-decoration: none;
+      font-weight: 700;
+      border-radius: 999px;
+      font-size: 1.1rem;
+      transition: transform 0.3s ease, background-color 0.3s ease;
+    }
+    .btn-home:hover {
+      transform: translateY(-2px);
+      background-color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <div class="error-page">
+    <video class="video-bg" autoplay loop muted playsinline>
+      <source src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260801_001207_ec20d138-aa45-4b2b-ab8c-bdc71607f240.mp4" type="video/mp4">
+    </video>
+    <div class="overlay"></div>
+    <div class="content">
+      <h1 class="error-code">404</h1>
+      <p class="error-msg">Looks like you've wandered off the map.</p>
+      <a href="/" class="btn-home">Return to Home</a>
+    </div>
+  </div>
+</body>
+</html>

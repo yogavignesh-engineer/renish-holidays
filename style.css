@@ -24,6 +24,10 @@
   box-sizing: border-box;
 }
 
+html, body {
+  overflow-x: hidden;
+}
+
 html {
   font-family: var(--font-sans);
   color: var(--ink-dark);
@@ -350,11 +354,17 @@ html {
 
 /* TYPOGRAPHY & SECTIONS */
 section {
-  padding: 6rem 0;
+  padding: 3rem 0;
+}
+@media (min-width: 768px) {
+  section { padding: 6rem 0; }
 }
 .section-head {
-  margin-bottom: 4rem;
+  margin-bottom: 2rem;
   text-align: center;
+}
+@media (min-width: 768px) {
+  .section-head { margin-bottom: 4rem; }
 }
 .section-tag {
   display: inline-flex;
@@ -590,7 +600,7 @@ h2 span::after {
   line-height: 1.6;
 }
 .hero-container {
-  padding-bottom: 4rem;
+  padding-bottom: 2rem;
   position: relative;
   z-index: 2;
   display: flex;
@@ -598,6 +608,9 @@ h2 span::after {
   height: 100%;
   justify-content: flex-end;
   
+}
+@media (min-width: 768px) {
+  .hero-container { padding-bottom: 4rem; }
 }
 /* CTA BOX */
 .whatsapp-cta-box {

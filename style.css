@@ -274,12 +274,11 @@ html {
 /* HERO SECTION */
 #hero {
   position: relative;
-  height: 100vh;
-  min-height: 600px;
+  min-height: 100vh;
+  padding-top: 120px; /* Safe space for navbar */
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  
   overflow: hidden;
 }
 .hero-video-wrapper {

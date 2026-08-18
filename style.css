@@ -1750,3 +1750,5 @@ textarea.form-input {
 .footer-social a:hover {
   color: var(--brand-accent);
 }
+
+.hero-word { display: inline-block; will-change: transform, opacity; }

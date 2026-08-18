@@ -62,7 +62,6 @@ const heroBgInner = document.getElementById('hero-bg-inner');
 
 // Setup initial states
 gsap.set(heroBgInner, { scale: 1.3 });
-gsap.set('.reveal-text', { yPercent: 110 });
 
 const tlLoader = gsap.timeline({
   onComplete: () => {
@@ -100,8 +99,9 @@ tlLoader
   // Hero Image zoom out
   .to(heroBgInner, { scale: 1, duration: 2.5, ease: 'power3.out' }, '<0.2')
   // Hero Typography
-  .to('.reveal-text', {
-    yPercent: 0,
+  .from('.hero-word', {
+    opacity: 0,
+    y: 50,
     duration: 1.2,
     stagger: 0.2,
     ease: 'power4.out'

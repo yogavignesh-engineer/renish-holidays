@@ -1573,3 +1573,55 @@ textarea.form-input {
   transform: translateY(0);
 }
 
+
+/* --- FINAL MOBILE OVERRIDES FOR BUGS --- */
+@media (max-width: 767px) {
+  .nav-right {
+    gap: 0.5rem !important;
+  }
+  .nav-phone span {
+    display: none;
+  }
+  .btn-sm {
+    padding: 0.5rem 0.75rem !important;
+    font-size: 0.8rem !important;
+  }
+  .hero-right {
+    flex-direction: column;
+    width: 100%;
+    gap: 1rem !important;
+  }
+  .hero-dest-slider {
+    width: 100% !important;
+    max-width: 100%;
+  }
+  .hero-stat-card {
+    width: 100%;
+    max-width: 100%;
+  }
+  .hero-dest-info {
+    flex-direction: column;
+    align-items: flex-start !important;
+    gap: 0.5rem;
+  }
+  #stats {
+    margin-top: -1.5rem !important;
+  }
+  .stats-grid {
+    padding: 1.5rem !important;
+    gap: 1rem !important;
+  }
+  .stat-val {
+    font-size: 2rem !important;
+  }
+  .timeline-wrapper {
+    width: 100%;
+    flex-direction: column;
+    padding: 2rem 1.5rem !important;
+    gap: 2rem !important;
+  }
+  .timeline-step {
+    width: 100%;
+    max-width: 100%;
+  }
+}

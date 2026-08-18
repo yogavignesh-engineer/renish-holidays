@@ -40,40 +40,75 @@ html {
   position: fixed;
   inset: 0;
   z-index: 9999;
-  background-color: var(--brand-deep);
-  color: #fff;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 2rem;
+  overflow: hidden;
+  pointer-events: none;
+}
+.loader-bg {
+  position: absolute;
+  inset: 0;
+  background-color: #050505;
+  z-index: 1;
+  transform-origin: top;
 }
 .loader-content {
+  position: relative;
+  z-index: 2;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 0.5rem;
+  gap: 1rem;
+}
+.loader-percent {
+  font-family: var(--font-heading);
+  font-size: 8rem;
+  font-weight: 800;
+  line-height: 1;
+  color: #fff;
+  letter-spacing: -0.04em;
   opacity: 0;
-  transform: translateY(20px);
 }
 .loader-text {
   font-family: var(--font-heading);
-  font-size: 1.5rem;
+  font-size: 1rem;
   font-weight: 600;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.4em;
+  color: rgba(255, 255, 255, 0.5);
+  text-transform: uppercase;
+  opacity: 0;
 }
-.loader-track {
-  width: 200px;
-  height: 2px;
-  background-color: rgba(255, 255, 255, 0.2);
-  border-radius: var(--radius-pill);
-  overflow: hidden;
+.loader-progress-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.1);
+  z-index: 2;
 }
-.loader-fill {
+.loader-progress-fill {
   width: 100%;
   height: 100%;
   background-color: #fff;
   transform-origin: left;
   transform: scaleX(0);
+}
+
+/* ANIMATION UTILITIES */
+.clip-text {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: bottom;
+  padding-bottom: 0.2em;
+  margin-bottom: -0.2em;
+}
+.reveal-text {
+  display: inline-block;
+  transform: translateY(110%);
+  will-change: transform;
 }
 
 /* NAVBAR */
@@ -1301,16 +1336,7 @@ textarea.form-input {
   background: var(--brand-accent);
   transform: scale(1.2);
 }
-.loader-mark {
-  width: 48px;
-  height: 48px;
-  border: 4px solid rgba(255, 255, 255, 0.2);
-  border-top-color: var(--brand-accent);
-  border-radius: 50%;
-  animation: spin 1s linear infinite;
-  margin-bottom: 1rem;
-}
-@keyframes spin { 100% { transform: rotate(360deg); } }
+
 
 /* --- HOW IT WORKS --- */
 .step-card {

@@ -72,18 +72,18 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
 
-  <script type="module" crossorigin src="/assets/index-wDs3cU13.js"></script>
-  <link rel="stylesheet" crossorigin href="/assets/index-CBXLsqFk.css">
+  <script type="module" crossorigin src="/assets/index-DxKyUxH1.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-BqNmrhvg.css">
 </head>
 <body>
-<!-- LOADER CURTAIN -->
 <div id="loader-curtain" class="loader-curtain">
+  <div class="loader-bg"></div>
   <div class="loader-content">
-    <div class="loader-mark"></div>
-    <div class="loader-text">RENISH HOLIDAYS</div>
+    <div class="loader-percent" id="loader-percent">0%</div>
+    <div class="loader-text" id="loader-text">RENISH HOLIDAYS</div>
   </div>
-  <div class="loader-track">
-    <div id="loader-fill" class="loader-fill"></div>
+  <div class="loader-progress-bar">
+    <div class="loader-progress-fill" id="loader-progress-fill"></div>
   </div>
 </div>
 
@@ -105,8 +105,8 @@
 
       <div class="nav-links" role="menubar">
         <a href="#destinations" role="menuitem">Destinations</a>
-        <a href="#packages" role="menuitem">Packages</a>
         <a href="#vehicles" role="menuitem">Vehicles</a>
+        <a href="#packages" role="menuitem">Packages</a>
         <a href="#testimonials" role="menuitem">Reviews</a>
         <a href="#contact" role="menuitem">Contact</a>
       </div>
@@ -114,7 +114,7 @@
       <div class="nav-right">
         <a href="tel:9894395472" class="nav-phone" aria-label="Call 9894395472">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.46 9.81 19.79 19.79 0 01.36 1.18 2 2 0 012.34.01h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.15 6.15l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
-          9894395472
+          <span>9894395472</span>
         </a>
         <a href="#build-package" class="btn btn-primary btn-sm" style="display:none" id="nav-book-btn">
           Book Now
@@ -136,8 +136,8 @@
 <div class="mobile-menu" id="mobile-menu" role="dialog" aria-label="Navigation menu">
   <nav aria-label="Mobile navigation">
     <a href="#destinations" class="mobile-link">Destinations</a>
-    <a href="#packages" class="mobile-link">Packages</a>
     <a href="#vehicles" class="mobile-link">Vehicles</a>
+    <a href="#packages" class="mobile-link">Packages</a>
     <a href="#how-it-works" class="mobile-link">How It Works</a>
     <a href="#testimonials" class="mobile-link">Reviews</a>
     <a href="#contact" class="mobile-link">Contact</a>
@@ -159,14 +159,15 @@
      ============================================================ -->
   <section id="hero" aria-label="Renish Holidays – Explore South India">
     <div class="hero-video-wrapper" aria-hidden="true" id="hero-bg-inner">
-      <img src="/assets/hero-cars-Pgpgwi6G.jpg" alt="" class="hero-video" fetchpriority="high">
+      <img src="/hero-cars.jpg" alt="" class="hero-video" fetchpriority="high">
       <div class="hero-bg-overlay"></div>
     </div>
 
   <div class="container hero-container">
     <!-- Giant Title -->
     <h1 class="hero-giant-title" id="hero-title" aria-label="Explore The South">
-      <!-- Will be injected by JS word-by-word -->
+      <span class="clip-text"><span class="reveal-text">Explore</span></span><br>
+      <span class="clip-text"><span class="reveal-text">The South</span></span>
     </h1>
 
     <!-- Bottom Row -->
@@ -183,7 +184,7 @@
         <!-- Destination Slider -->
         <div class="hero-dest-slider" id="hero-slider">
           <div class="hero-dest-card" id="slider-card">
-            <img src="/assets/kodaikanal-D1HDygvy.jpg" alt="" class="hero-dest-img" id="slider-img"/>
+            <img src="/kodaikanal.jpg" alt="" class="hero-dest-img" id="slider-img"/>
             <div class="hero-dest-info">
               <div>
                 <div class="hero-dest-brand" id="slider-brand">KODAIKANAL</div>
@@ -210,7 +211,7 @@
             <div class="hero-stat-caption">Happy Families<br/>Served</div>
           </div>
           <div class="hero-stat-photo">
-            <img src="/assets/rameswaram-5wkUM3cH.jpg" alt="Rameswaram Temple Corridor" loading="lazy" width="400" height="500"/>
+            <img src="/rameswaram.jpg" alt="Rameswaram Temple Corridor" loading="lazy" width="400" height="500"/>
           </div>
         </article>
 
@@ -260,7 +261,7 @@
     </div>
     <div class="destinations-grid">
       <article class="dest-card reveal" aria-label="Kodaikanal destination">
-        <img src="/assets/kodaikanal-D1HDygvy.jpg" alt="Kodaikanal Lake with misty hills at golden hour" loading="lazy" width="600" height="450"/>
+        <img src="/kodaikanal.jpg" alt="Kodaikanal Lake with misty hills at golden hour" loading="lazy" width="600" height="450"/>
         <div class="dest-card-overlay" aria-hidden="true"></div>
         <div class="dest-card-body">
           <h3 class="dest-card-name">Kodaikanal</h3>
@@ -276,7 +277,7 @@
       </article>
 
       <article class="dest-card reveal reveal-delay-1" aria-label="Kanthaloor destination">
-        <img src="/assets/kanthaloor-DjRiTx7W.jpg" alt="Kanthaloor apple orchards in the Western Ghats" loading="lazy" width="600" height="450"/>
+        <img src="/kanthaloor.jpg" alt="Kanthaloor apple orchards in the Western Ghats" loading="lazy" width="600" height="450"/>
         <div class="dest-card-overlay" aria-hidden="true"></div>
         <div class="dest-card-body">
           <h3 class="dest-card-name">Kanthaloor</h3>
@@ -292,7 +293,7 @@
       </article>
 
       <article class="dest-card reveal reveal-delay-2" aria-label="Kerala destination">
-        <img src="/assets/kerala-Clu8uLic.jpg" alt="Kerala backwaters with houseboat at sunset" loading="lazy" width="600" height="450"/>
+        <img src="/kerala.jpg" alt="Kerala backwaters with houseboat at sunset" loading="lazy" width="600" height="450"/>
         <div class="dest-card-overlay" aria-hidden="true"></div>
         <div class="dest-card-body">
           <h3 class="dest-card-name">Kerala Backwaters</h3>
@@ -308,7 +309,7 @@
       </article>
 
       <article class="dest-card reveal" aria-label="Ooty destination">
-        <img src="/assets/ooty-DkGc5v8A.jpg" alt="Ooty Nilgiri mountain railway through scenic hills" loading="lazy" width="600" height="450"/>
+        <img src="/ooty.jpg" alt="Ooty Nilgiri mountain railway through scenic hills" loading="lazy" width="600" height="450"/>
         <div class="dest-card-overlay" aria-hidden="true"></div>
         <div class="dest-card-body">
           <h3 class="dest-card-name">Ooty – The Nilgiris</h3>
@@ -324,7 +325,7 @@
       </article>
 
       <article class="dest-card reveal reveal-delay-1" aria-label="Munnar destination">
-        <img src="/assets/munnar-DhTD5d6R.jpg" alt="Munnar tea gardens at sunrise with misty valleys" loading="lazy" width="600" height="450"/>
+        <img src="/munnar.jpg" alt="Munnar tea gardens at sunrise with misty valleys" loading="lazy" width="600" height="450"/>
         <div class="dest-card-overlay" aria-hidden="true"></div>
         <div class="dest-card-body">
           <h3 class="dest-card-name">Munnar</h3>
@@ -340,7 +341,7 @@
       </article>
 
       <article class="dest-card reveal reveal-delay-2" aria-label="Rameswaram destination">
-        <img src="/assets/rameswaram-5wkUM3cH.jpg" alt="Rameswaram Ramanathaswamy Temple corridor with sacred lamp light" loading="lazy" width="600" height="450"/>
+        <img src="/rameswaram.jpg" alt="Rameswaram Ramanathaswamy Temple corridor with sacred lamp light" loading="lazy" width="600" height="450"/>
         <div class="dest-card-overlay" aria-hidden="true"></div>
         <div class="dest-card-body">
           <h3 class="dest-card-name">Rameswaram</h3>
@@ -430,7 +431,7 @@
           </div>
         </div>
         <div class="vehicle-img-wrap">
-          <img src="/assets/etios-DbasOzQv.jpg" alt="Toyota Etios TN 38 BP 4630 - Renish Holidays travel vehicle" loading="lazy" id="etios-img" style="width: 100%; aspect-ratio: 16/9; object-fit: cover;" />
+          <img src="/etios.jpg" alt="Toyota Etios TN 38 BP 4630 - Renish Holidays travel vehicle" loading="lazy" id="etios-img" style="width: 100%; aspect-ratio: 16/9; object-fit: cover;" />
           <div class="vehicle-badges" aria-label="Available as">
             <span class="v-badge ac">AC</span>
             <span class="v-badge nonac">Non-AC</span>
@@ -482,7 +483,7 @@
           </div>
         </div>
         <div class="vehicle-img-wrap">
-          <img src="/assets/xylo-BNlOx-XR.jpg" alt="Mahindra Xylo TN 06 E 3381 - Renish Holidays group travel vehicle" loading="lazy" style="width: 100%; aspect-ratio: 16/9; object-fit: cover;" />
+          <img src="/xylo.jpg" alt="Mahindra Xylo TN 06 E 3381 - Renish Holidays group travel vehicle" loading="lazy" style="width: 100%; aspect-ratio: 16/9; object-fit: cover;" />
           <div class="vehicle-badges" aria-label="Available as">
             <span class="v-badge ac">AC</span>
           </div>
@@ -533,7 +534,7 @@
           </div>
         </div>
         <div class="vehicle-img-wrap">
-          <img src="/assets/traveller-5MznRRKx.jpg" alt="Force Traveller TN 12 E 4816 - Renish Holidays group travel vehicle" loading="lazy" style="width: 100%; aspect-ratio: 16/9; object-fit: cover;" />
+          <img src="/traveller.jpg" alt="Force Traveller TN 12 E 4816 - Renish Holidays group travel vehicle" loading="lazy" style="width: 100%; aspect-ratio: 16/9; object-fit: cover;" />
           <div class="vehicle-badges" aria-label="Available as">
             <span class="v-badge ac">AC</span>
             <span class="v-badge nonac">Non-AC</span>
@@ -596,7 +597,7 @@
     <div class="packages-grid">
       <article class="pkg-card reveal">
         <div class="pkg-img">
-          <img src="/assets/kodaikanal-D1HDygvy.jpg" alt="Kodaikanal tour package" loading="lazy" width="600" height="338"/>
+          <img src="/kodaikanal.jpg" alt="Kodaikanal tour package" loading="lazy" width="600" height="338"/>
         </div>
         <div class="pkg-body">
           <h3 class="pkg-name">Kodaikanal Hill Special</h3>
@@ -621,7 +622,7 @@
 
       <article class="pkg-card featured reveal">
         <div class="pkg-img">
-          <img src="/assets/kerala-Clu8uLic.jpg" alt="Kerala backwaters and Munnar tour" loading="lazy" width="600" height="338"/>
+          <img src="/kerala.jpg" alt="Kerala backwaters and Munnar tour" loading="lazy" width="600" height="338"/>
         </div>
         <div class="pkg-body">
           <h3 class="pkg-name">Kerala–Munnar Combo</h3>
@@ -646,7 +647,7 @@
 
       <article class="pkg-card reveal">
         <div class="pkg-img">
-          <img src="/assets/ooty-DkGc5v8A.jpg" alt="Ooty Nilgiris tour package" loading="lazy" width="600" height="338"/>
+          <img src="/ooty.jpg" alt="Ooty Nilgiris tour package" loading="lazy" width="600" height="338"/>
         </div>
         <div class="pkg-body">
           <h3 class="pkg-name">Ooty–Kanthaloor Explorer</h3>
@@ -1250,11 +1251,11 @@
 
 <!-- ============================================================
      JAVASCRIPT
-     ============================================================ -->
-<script src="/ui.js" defer></script>
+     ============================================================ -->
 
 <!-- ============================================================
      HERO EDITORIAL PARALLAX & ANIMATIONS
      ============================================================ -->
 </body>
 </html>
+

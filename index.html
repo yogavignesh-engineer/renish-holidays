@@ -75,14 +75,14 @@
 <link rel="stylesheet" href="/style.css">
 </head>
 <body>
-<!-- LOADER CURTAIN -->
 <div id="loader-curtain" class="loader-curtain">
+  <div class="loader-bg"></div>
   <div class="loader-content">
-    <div class="loader-mark"></div>
-    <div class="loader-text">RENISH HOLIDAYS</div>
+    <div class="loader-percent" id="loader-percent">0%</div>
+    <div class="loader-text" id="loader-text">RENISH HOLIDAYS</div>
   </div>
-  <div class="loader-track">
-    <div id="loader-fill" class="loader-fill"></div>
+  <div class="loader-progress-bar">
+    <div class="loader-progress-fill" id="loader-progress-fill"></div>
   </div>
 </div>
 
@@ -165,7 +165,8 @@
   <div class="container hero-container">
     <!-- Giant Title -->
     <h1 class="hero-giant-title" id="hero-title" aria-label="Explore The South">
-      <!-- Will be injected by JS word-by-word -->
+      <span class="clip-text"><span class="reveal-text">Explore</span></span><br>
+      <span class="clip-text"><span class="reveal-text">The South</span></span>
     </h1>
 
     <!-- Bottom Row -->

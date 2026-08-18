@@ -51,50 +51,77 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 // ============================================================
 //   INTRO LOADER ANIMATION
 // ============================================================
+lenis.stop();
+document.body.style.overflow = 'hidden';
+
+const percentEl = document.getElementById('loader-percent');
+const progressFill = document.getElementById('loader-progress-fill');
+const loaderText = document.getElementById('loader-text');
+const curtain = document.getElementById('loader-curtain');
+const heroBgInner = document.getElementById('hero-bg-inner');
+
+// Setup initial states
+gsap.set(heroBgInner, { scale: 1.3 });
+gsap.set('.reveal-text', { yPercent: 110 });
+
 const tlLoader = gsap.timeline({
   onComplete: () => {
-    document.getElementById('loader-curtain').style.display = 'none';
-    initHeroAnimations();
+    if (curtain) curtain.style.display = 'none';
+    lenis.start();
+    document.body.style.overflow = '';
   }
 });
 
+const progressObj = { val: 0 };
+
 tlLoader
-  .to('.loader-content', { opacity: 1, y: 0, duration: 1, ease: 'power3.out' })
-  .to('.loader-fill', { scaleX: 1, duration: 1.5, ease: 'power2.inOut' }, '-=0.5')
-  .to('.loader-curtain', { yPercent: -100, duration: 1, ease: 'power4.inOut' }, '+=0.2');
-
-// ============================================================
-//   HERO ANIMATIONS
-// ============================================================
-function initHeroAnimations() {
-  const title = document.getElementById('hero-title');
-  if (title) {
-    title.innerHTML = 'Explore<br>The South';
-    gsap.fromTo(title, 
-      { opacity: 0, y: 50 },
-      { opacity: 1, y: 0, duration: 1.2, ease: 'power4.out' }
-    );
-  }
-
-  const tagline = document.getElementById('hero-tagline');
-  if (tagline) {
-    tagline.innerText = 'Safe, comfortable, and affordable custom tour packages for families and groups across Tamil Nadu and Kerala.';
-    gsap.fromTo(tagline, 
-      { opacity: 0, y: 20 },
-      { opacity: 1, y: 0, duration: 1, delay: 0.3, ease: 'power3.out' }
-    );
-  }
-
-  gsap.fromTo('.hero-dest-slider', 
-    { opacity: 0, x: 50 },
-    { opacity: 1, x: 0, duration: 1, delay: 0.5, ease: 'power3.out' }
-  );
-
-  gsap.fromTo('.hero-stat-card', 
+  .to(loaderText, { opacity: 1, duration: 1, ease: 'power2.out' })
+  .to(progressObj, {
+    val: 100,
+    duration: 2,
+    ease: 'power3.inOut',
+    onUpdate: () => {
+      if (percentEl) {
+        percentEl.innerText = Math.round(progressObj.val) + '%';
+        const scale = 1 + (progressObj.val / 100) * 0.2;
+        percentEl.style.transform = `scale(${scale})`;
+      }
+      if (progressFill) {
+        progressFill.style.transform = `scaleX(${progressObj.val / 100})`;
+      }
+    }
+  }, '<')
+  .to('.loader-percent', { opacity: 1, duration: 0.5, ease: 'none' }, 0)
+  // Explode / Fade out loader content
+  .to('.loader-content', { scale: 1.5, opacity: 0, duration: 0.8, ease: 'power3.in' }, '+=0.2')
+  .to('.loader-progress-bar', { opacity: 0, duration: 0.4 }, '<')
+  // Reveal Curtain
+  .to(curtain, { yPercent: -100, duration: 1.2, ease: 'power4.inOut' }, '<0.2')
+  // Hero Image zoom out
+  .to(heroBgInner, { scale: 1, duration: 2.5, ease: 'power3.out' }, '<0.2')
+  // Hero Typography
+  .to('.reveal-text', {
+    yPercent: 0,
+    duration: 1.2,
+    stagger: 0.2,
+    ease: 'power4.out'
+  }, '<0.5')
+  // Hero Bottom Elements
+  .fromTo('.hero-tagline', 
     { opacity: 0, y: 30 },
-    { opacity: 1, y: 0, duration: 1, delay: 0.7, ease: 'power3.out' }
+    { opacity: 1, y: 0, duration: 1, ease: 'power3.out' },
+    '<0.6'
+  )
+  .fromTo('.hero-dest-slider', 
+    { opacity: 0, x: 50 },
+    { opacity: 1, x: 0, duration: 1, ease: 'power3.out' },
+    '<0.2'
+  )
+  .fromTo('.hero-stat-card', 
+    { opacity: 0, y: 30 },
+    { opacity: 1, y: 0, duration: 1, ease: 'power3.out' },
+    '<0.2'
   );
-}
 
 // Hero Parallax
 gsap.to('.hero-bg-inner', {

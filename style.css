@@ -1625,3 +1625,70 @@ textarea.form-input {
     max-width: 100%;
   }
 }
+
+/* --- FAB BUTTONS MISSING STYLES FIX --- */
+.whatsapp-fab {
+  position: fixed;
+  bottom: 2rem;
+  left: 2rem;
+  background-color: #25D366;
+  color: white;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
+  z-index: 999;
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.whatsapp-fab:hover {
+  transform: scale(1.1);
+  color: white;
+}
+.scroll-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background-color: var(--brand-accent);
+  color: var(--brand-dark);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(220, 255, 7, 0.3);
+  z-index: 998;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+  transition: all 0.3s ease;
+}
+.scroll-top.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+.scroll-top:hover {
+  transform: translateY(-5px);
+  background-color: white;
+}
+
+@media (max-width: 767px) {
+  .whatsapp-fab {
+    bottom: 1.5rem;
+    left: 1.5rem;
+    width: 50px;
+    height: 50px;
+  }
+  .scroll-top {
+    bottom: 1.5rem;
+    right: 1.5rem;
+    width: 45px;
+    height: 45px;
+  }
+}
